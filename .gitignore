@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Assignment 1 — dataset files (downloadable / regenerable, never commit)
+data/*.csv
+data/.download_parts/
+!data/README.md
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE local settings
+.idea/
