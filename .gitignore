@@ -221,8 +221,12 @@ __marimo__/
 
 # Assignment 1 — dataset files (downloadable / regenerable, never commit)
 data/*.csv
+data/*.download
 data/.download_parts/
 !data/README.md
+
+# Kaggle API credentials (never commit)
+kaggle.json
 
 # Jupyter
 .ipynb_checkpoints/

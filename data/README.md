@@ -33,8 +33,10 @@ The notebook downloads it automatically on first run:
 1. It tries parallel HTTP Range requests (8 workers), falling back to a single streaming
    download if the server or network does not support ranges.
 2. Partial downloads go to `data/.download_parts/` and are only moved into place once complete.
-3. The file is checked for minimum size and SHA-256 before pandas reads it.
-4. If the download fails, the notebook raises a clear `RuntimeError` and stops. **No synthetic
+3. The file is checked for minimum size and SHA-256 before pandas reads it. This applies to a
+   cached file as well as a fresh download.
+4. If the download fails or the checksum does not match the reference copy, the notebook deletes
+   the bad file and raises a clear `RuntimeError`; it stops rather than continuing. **No synthetic
    data is ever generated.**
 
 **Manual download** (offline or blocked network):
